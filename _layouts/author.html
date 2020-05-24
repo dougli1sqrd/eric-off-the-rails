@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--page  content  typeset">
+
+    <h1>{{ page.name }}</h1>
+    <h2>{{ page.position }}</h2>
+
+    {{ content }}
+
+    <h3>Posts by {{ page.short_name }}</h3>
+    {% include author-post-list.html %}
+
+  </article>
+
+  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
+
+</main>
+
+{% include site-footer.html %}

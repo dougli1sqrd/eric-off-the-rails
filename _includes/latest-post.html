@@ -1,0 +1,16 @@
+<section class="section  typeset">
+  <ul class="list  list--posts">
+    <!-- {% assign latest_posts = site.posts | sort: "date" %} -->
+    {% for page in site.posts limit:1 %}
+      <li class="item  item--post">
+        <article class="article  article--post">
+
+          <h4><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h4>
+          {% include post-meta.html %}
+          {{ page.excerpt | markdownify | truncatewords: 60 }}
+
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

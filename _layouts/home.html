@@ -1,0 +1,53 @@
+---
+layout: default
+aside: true
+aside_text: |
+  ### About this site
+---
+
+{% include site-header.html %}
+
+<main class="main  container">
+
+  <article class="article  article--page  content  typeset">
+
+    <h1>{{ page.title }}</h1>
+
+    {{ content }}
+
+    <hr/>
+    <h2>Featured</h2>
+    <section class="section  typeset">
+      <ul class="list  list--posts">
+        {% assign featured = site.posts | where: "featured", true %}
+        {% for page in featured limit:1 %}
+          <li class="item  item--post">
+            <article class="article  article--post">
+
+              <h5><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h5>
+              {% include post-meta.html %}
+              {{ page.excerpt | markdownify | truncatewords: 60 }}
+
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <hr/>
+    <h2>Latest</h2>
+    {% include latest-post.html %}
+
+  </article>
+
+  {% if page.aside == true %}
+  <aside class="aside  typeset  aside--right">
+    <section class="section  section--description">
+      {{ page.aside_text | markdownify }}
+      {% include nav-social.html %}
+    </section>
+  </aside>
+  {% endif %}
+
+</main>
+
+{% include site-footer.html %}

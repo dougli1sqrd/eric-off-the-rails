@@ -1,0 +1,10 @@
+language: ruby
+ruby:
+    - "2.5"
+
+install:
+    - gem install jekyll bundler
+    - bundle install
+
+script:
+    - bundle exec jekyll build

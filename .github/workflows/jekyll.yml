@@ -16,7 +16,8 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: |
         docker run -v ${{ github.workspace }}/:/srv/jekyll \
-          jekyll/jekyll:3.8.5 /bin/bash -c "chmod 777 /srv/jekyll && jekyll build"
+          jekyll/jekyll:3.8.5 /bin/bash -c "cd /srv/jekyll && gem install jekyll bundler && bundle install && bundle exec jekyll build --future"
+        ls -l ${{ github.workspace }}/_site/
     - name: Deploy to server
       uses: Pendect/action-rsyncer@v1.1.0
       env:

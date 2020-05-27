@@ -81,8 +81,8 @@ navigation_header:
   url: /blog/
 - title: About
   url: /about
-- title: Authors
-  url: /authors
+- title: Contributors
+  url: /contributors
 - title: Categories
   url: /categories
 

@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About
-permalink: /about
 feature_image: "/assets/images/bernal-flowers-header.jpg"
+permalink: /about/
 ---
 
 Thinking in Cities, to me, is all about seeing our communities through the eyes of history, geography, politics, justice, infrastructure and, crucially, to imagine and advocate for a better world for all of us in the City.

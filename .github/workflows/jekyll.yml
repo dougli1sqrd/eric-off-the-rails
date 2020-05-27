@@ -19,14 +19,16 @@ jobs:
           ruby:2.5.8 /bin/bash -c "cd /srv/jekyll && gem install jekyll bundler && bundle install && bundle exec jekyll build --future"
         ls -l ${{ github.workspace }}/_site/
     - name: Deploy to server
+      id: deploy
       uses: Pendect/action-rsyncer@v1.1.0
       env:
         DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
       with:
-        flags: '-avzr --delete'
-        options: '--dry-run'
+        flags: '-avr --delete --dry-run'
+        options: ''
         ssh_options: '-p 22010'
         src: '${{ github.workspace }}/_site/*'
         dest: 'ericoff@web.electricembers.net:/home/ericoff/public_html/'
     - name: Display status from deploy
+      if: ${{ always() }}
       run: echo "${{ steps.deploy.outputs.status }}"

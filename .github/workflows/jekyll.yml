@@ -18,7 +18,12 @@ jobs:
         docker run -u $(id -u):$(id -g) -v ${{ github.workspace }}/:/srv/jekyll \
           ruby:2.5.8 /bin/bash -c "cd /srv/jekyll && gem install jekyll bundler && bundle install && bundle exec jekyll build --future"
         ls -l ${{ github.workspace }}/_site/
-        pwd ${{ github.workspace }}
+        pwd
+    - name: Show Contents
+      run: |
+        echo ${{ github.workspace }}
+        ls -l ${{ github.workspace }}
+        ls -l ${{ github.workspace }}/_site/
     - name: Deploy to server
       id: deploy
       uses: Pendect/action-rsyncer@v1.1.0

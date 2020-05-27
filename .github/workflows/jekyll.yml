@@ -25,6 +25,7 @@ jobs:
         ls -l ${{ github.workspace }}
         ls -l ${{ github.workspace }}/_site/
     - name: Deploy to server
+      if: ${{github.ref == "master"}}
       id: deploy
       uses: Pendect/action-rsyncer@v1.1.0
       env:

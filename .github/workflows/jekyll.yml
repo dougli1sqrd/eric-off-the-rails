@@ -30,7 +30,7 @@ jobs:
       env:
         DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
       with:
-        flags: '-avr --delete --dry-run'
+        flags: '-avr --delete'
         options: ''
         ssh_options: '-p 22010'
         src: './_site/'

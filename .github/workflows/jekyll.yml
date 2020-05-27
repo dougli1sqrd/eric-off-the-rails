@@ -33,7 +33,7 @@ jobs:
         flags: '-avr --delete --dry-run'
         options: ''
         ssh_options: '-p 22010'
-        src: '${{ github.workspace }}/_site/*'
+        src: '${{ github.workspace }}/_site/'
         dest: 'ericoff@web.electricembers.net:/home/ericoff/public_html/'
     - name: Display status from deploy
       if: ${{ always() }}

@@ -33,7 +33,7 @@ jobs:
         flags: '-avr --delete'
         options: ''
         ssh_options: '-p 22010'
-        src: '.static/_site/'
+        src: './static/_site/'
         dest: 'ericoff@web.electricembers.net:/home/ericoff/public_html/'
     - name: Deploy scripts to server
       id: deploy-scripts

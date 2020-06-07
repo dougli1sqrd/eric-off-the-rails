@@ -1,0 +1,14 @@
+version: "3"
+services:
+    web:
+        build: .
+        ports:
+            - "4000:80"
+        volumes:
+            - "./static/_site/:/usr/local/apache2/htdocs/"
+            - "./bin/:/usr/local/apache2/cgi-bin/"
+            - "./env/:/home/ericoff/env/"
+    mysql:
+        image: "mysql:latest"
+        environment:
+            MYSQL_ROOT_PASSWORD: hellothere

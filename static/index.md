@@ -12,6 +12,7 @@ aside_text: |
     - Finding Feudalism in Ancient Rome
     - Fare Evasion rhetoric and how it serves to dehumanize homeless people
     - Why we don't notice fascism in our culture
+    - How She-Ra and Dragon Prince show different sides of the fight against Fascism
 ---
 
 Thinking in Cities, to me, is all about seeing our communities through the eyes of history, geography, politics, justice, infrastructure and, crucially, to imagine and advocate for a better world for all of us in the City.

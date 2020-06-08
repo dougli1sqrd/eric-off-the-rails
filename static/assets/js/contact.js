@@ -10,7 +10,7 @@ function sendMessage() {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == 4 && (this.status >= 200 || this.status < 300)) {
             // document.getElementById("hello-text").innerHTML = "hello world";
             window.location.href = "/pages/contact-thanks";
         } else if (this.status >= 400) {

@@ -1,0 +1,23 @@
+<style>
+input:invalid {
+  background-color: pink
+}
+
+input:valid {
+  border: 2px solid black;
+}
+</style>
+
+<form method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required/>
+    <label for="email">Email</label>
+    <input type="text" id="emailfield" name="email" pattern="[\w\d][\w\d\-_\.+]*@[\w\d][\w\d\-_]*\.[\w\d][\w\d\-_]*(\.[\w\d][\w\d\-_]*)*" required/>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" required/>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="8" required></textarea>
+    <button id="send" type="submit" onclick="sendMessage()">Submit</button>
+<form>
+<div id="status"></div>
+<script type="text/javascript" src="/assets/js/contact.js"></script>

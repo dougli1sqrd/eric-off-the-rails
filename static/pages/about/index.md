@@ -14,5 +14,3 @@ For me, Cities are a wonderous place! It's where we can bring together lots of p
 Sadly though, many of the urbanist dreams above are only accessible to a few people. Skyrocketing rent, loss of old job markets, and influxes of new types of jobs causing mass displacement and gentrification have and will threaten the livelihoods of people who have been here for decades. Many are being forced to the suburbs or into homelessness. This is heartbreaking to me, as *all* people deserve a guarantee for basic necessities like food, housing, internet, and more. We could provide it to them best in the joy of the City!
 
 So it is clear to me that the only way forward is for a radically different view of the City - one that is democratically controlled by its inhabitants. All people deserve to be able to ride their bike or take the subway, drink a nice coffee in an atmospheric cafe, and have a roof over their heads. Only when workers, tenants, and everyone else collectively own the land they live on and the offices or factories they work in - *not capital* - can we have a Just vision of a greenhouse free future in the City.
-
-{% include hello.html %}

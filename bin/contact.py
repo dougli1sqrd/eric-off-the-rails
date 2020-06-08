@@ -22,6 +22,8 @@ def main():
     if os.getenv("REQUEST_METHOD") == "POST":
         send_message(from_email, "{}: {}".format(name, subject), message)
 
+    out(json.dumps({}), "json")
+
 
 def send_message(f, subject, note):
 
@@ -36,6 +38,12 @@ def send_message(f, subject, note):
     s.send_message(m)
     # print("sent")
     s.quit()
+
+
+def out(data: str, mime: str):
+    mime_out = mimetypes.types_map.get(mime, "text/plain")
+    print("Content-Type: {}\n".format(mime_out))
+    print(data)
 
 
 if __name__ == "__main__":

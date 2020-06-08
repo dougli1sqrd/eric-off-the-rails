@@ -89,6 +89,8 @@ navigation_header:
   url: /contributors
 - title: Categories
   url: /categories
+- title: Contact
+  url: /contact
 
 navigation_footer:
 - title: Created by Eric, Off the Rails

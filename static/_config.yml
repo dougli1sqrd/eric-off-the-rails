@@ -94,7 +94,7 @@ navigation_header:
 
 navigation_footer:
 - title: Created by Eric, Off the Rails
-  url: www.twitter.com/dougli1sqrd
+  url: "https://twitter.com/dougli1sqrd"
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   Twitter: "https://twitter.com/dougli1sqrd"

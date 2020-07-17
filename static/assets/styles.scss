@@ -12,14 +12,16 @@ body {}
   }
 }
 $linkColour: #b13658;
+$accentColour: #b13658;
 $hoverColour: #3952b7;
+$captionColour: #b13658;
 
 $bodytype: (
   font-family: '"Noto Sans", Ariel',
   regular: 400,
   bold: 700,
   italic: italic,
-  cap-height: 0.75
+  cap-height: 0.72,
 ) !default;
 
 $headingtype: (

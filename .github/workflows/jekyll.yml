@@ -16,7 +16,7 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: |
         docker run -u $(id -u):$(id -g) -v ${{ github.workspace }}/static/:/srv/jekyll \
-          ruby:2.5.8 /bin/bash -c "cd /srv/jekyll && gem install jekyll bundler && bundle install && bundle exec jekyll build --future"
+          ruby:3.0.0 /bin/bash -c "cd /srv/jekyll && gem install jekyll bundler && bundle install && bundle exec jekyll build --future"
         ls -l ${{ github.workspace }}/static/_site/
         pwd
     - name: Show Contents

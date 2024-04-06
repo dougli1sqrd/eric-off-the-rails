@@ -83,6 +83,8 @@ navigation_header:
   url: /
 - title: Posts
   url: /blog/
+- title: Off the Power Rails
+  url: /tech/
 - title: About
   url: /about
 - title: Contributors
@@ -114,6 +116,8 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+
+caption_color: "#b13658"
 
 
 # Exclude from processing.

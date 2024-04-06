@@ -5,8 +5,9 @@ author: Eric
 feature_image: "/assets/images/IMG_20180602_153013.jpg"
 featured: true
 aside: true
+category: cities
 summary: |
-    #### Cars are dangerous, not scooters
+    #### Cars are dangerous, not scooters 
     > Scooters are often given ridiculously unfair scrutiny in the eyes of the public and the media. Often the causes of danger of scooters are cars being driven too fast and without enough caution. This part of the same culture that blames bikers and pedestrians for being hit by cars when **the car is the only agent that can do violence on others**. Taking into account the power imbalance between vulnerable street users and drivers should be the lens through which people understand street danger.
 ---
 

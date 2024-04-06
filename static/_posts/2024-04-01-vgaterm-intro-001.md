@@ -4,6 +4,7 @@ title: "Introduction to Vgaterm"
 author: Eric
 category: tech
 tags: vgaterm
+feature_image: "/assets/images/vgaterm-banner-01.jpeg"
 ---
 
 Over the past two years or so my friend [Seth](https://github.com/sethp) and I have been building a hardware [terminal](). Or at least, we started building something and it eventually became a terminal.

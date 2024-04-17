@@ -1,0 +1,21 @@
+FROM ruby@sha256:c74394d0a4a05a3068ca9d0c53c36d451e27773264b568ae16ae24be9ad5621d
+# ruby:3.0.0
+
+WORKDIR /srv/jekyll
+
+ARG uid
+ARG gid
+
+RUN groupadd -g $gid jekyll
+RUN useradd -ms /bin/bash -u $uid -g $gid jekyll
+
+RUN gem install jekyll:4.3.3 bundler:2.5.7
+
+COPY ./static/Gemfile .
+COPY ./static/Gemfile.lock .
+RUN bundle install
+
+USER 1000:1000
+ENV GEM_HOME=/usr/local/bundle
+ENV PATH="/usr/local/bundle/bin:${PATH}"
+

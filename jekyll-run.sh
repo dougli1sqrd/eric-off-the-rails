@@ -1,5 +1,5 @@
 #!/bin/bash
 set -euo pipefail
 
-docker run -it --rm -v ./static:/srv/jekyll jekyll /bin/bash -c "bundle exec jekyll build -w"
+docker run -it --rm --init -v ./static:/srv/jekyll $1 bundle exec jekyll build -w
 

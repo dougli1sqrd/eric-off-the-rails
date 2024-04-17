@@ -16,7 +16,7 @@ jobs:
     - name: Build the site in the jekyll/builder container
       run: |
         cd "${{ github.workspace }}"
-        docker run -it --rm --init -v ./static:/srv/jekyll $(./jekyll-build.sh -q) bundle exec jekyll build --future
+        docker run --rm --init -v ./static:/srv/jekyll $(./jekyll-build.sh -q) bundle exec jekyll build --future
     - name: Show Contents
       run: |
         echo ${{ github.workspace }}

@@ -12,9 +12,9 @@ Over the past two years or so my friend [Seth](https://github.com/sethp) and I h
 
 This pandemic project was a way for us to connect with each other and learn new technical skills while building something that would allow us to physically connect computers together.
 
-A hardware terminal is an old-school way of connecting a user to a mainframe - or a multi-user computer. A terminal has a keyboard and monitor and a "serial" connection to a computer that many other people could be using at the same time with their own terminals. It's the physical device that you might have had on your desk in 1975, and that now exist as software emulating that hardware in the form of your favorite terminal program where you might type `ls` to list files in a directory. To learn about terminals and how they've shaped computing history, I'd absolutely reccomend [this blog post](http://www.linusakesson.net/programming/tty/).
+A hardware terminal is an old-school way of connecting a user to a mainframe - or a multi-user computer. A terminal has a keyboard and monitor and a "serial" connection to a computer that many other people could be using at the same time with their own terminals. It's the physical device that you might have had on your desk in 1975, and that now exist as software emulating that hardware in the form of your favorite terminal program where you might type `ls` to list files in a directory. To learn about terminals and how they've shaped computing history, I'd absolutely recommend [this blog post](http://www.linusakesson.net/programming/tty/).
 
-Terminals are largely not in use any more because computers are cheap and everywhere and can just connect to each other over the internet. You may remember using a hardware terminal (up to the late 90s, perhaps) at your local or school library to browse the available books in the catalogue. I remembery my elementary school likely used VT terminals in their library!
+Terminals are largely not in use any more because computers are cheap and everywhere and can just connect to each other over the internet. You may remember using a hardware terminal (up to the late 90s, perhaps) at your local or school library to browse the available books in the catalogue. I remember my elementary school likely used VT terminals in their library!
 
 This is the start in a series of posts all about the planning, building, and philosophy of Seth and I making a hardware terminal in 2024.
 
@@ -26,7 +26,7 @@ My technical background is mostly java, python, and the web. So a part of me has
 
 At some point I learned about [RISC-V](https://riscv.org/), an open source instruction set for CPUs, and decided I wanted to try programming rust for RISC-V, and Seth and I bought a few [HiFive](https://www.sifive.com/boards/hifive1-rev-b) boards. Inspired by [Ben Eater](https://www.youtube.com/@BenEater)'s youtube video ["Making the Worlds Worst Video Card"](https://www.youtube.com/watch?v=l7rce6IQDWs) using a 6502 processor, I decided to make the hifive board into a "video card". After a year I had a set of breadboards and a RISC-V CPU displaying images and text using my own font. It output a VGA signal in the 640x480 mode made up of 160x96 actual pixels, each with 64 possible colors (due to memory constraints):
 
-{% include figure.html image="/assets/images/hifive-vga-breadboards.jpg" caption="hifive board attached to breadboards outputing VGA" width=600 %}
+{% include figure.html image="/assets/images/hifive-vga-breadboards.jpg" caption="hifive board attached to breadboards outputting VGA" width=600 %}
 
 {% include figure.html image="/assets/images/streetcar-red-hifive.jpg" caption="Red streetcar in SF converted for VGA hardware" width=600  %}
 
@@ -36,7 +36,7 @@ Code for this project can be [found here](https://github.com/rustbox/rustbox-hif
 
 # Vgaterm
 
-The hifive board video card was neat and I learned a lot but I wanted it to be useful somehow. In the hifive code I had also made some command line bare metal programs as well as having the characters update from keyboard input. I was also always a little sad that I needed a large computer to be attached to my small computer to run and interact with it (e.g. through screen or other terminal program). Thus I realized I wanted to make a physical terminal, and upgrade the VGA capabilities. So Seth and I embarked on making *Vgaterm*: a hardware terminal that would would output 640x400 pixels at 256 colors, connect to serial IO, recieve keyboard input, and display text updates to the screen. The goal was to be able to log in to a standard linux machine with the hardware and interact on the command line - and hopefully use any standard terminal programs like Vim, etc.
+The hifive board video card was neat and I learned a lot but I wanted it to be useful somehow. In the hifive code I had also made some command line bare metal programs as well as having the characters update from keyboard input. I was also always a little sad that I needed a large computer to be attached to my small computer to run and interact with it (e.g. through screen or other terminal program). Thus I realized I wanted to make a physical terminal, and upgrade the VGA capabilities. So Seth and I embarked on making *Vgaterm*: a hardware terminal that would would output 640x400 pixels at 256 colors, connect to serial IO, receive keyboard input, and display text updates to the screen. The goal was to be able to log in to a standard linux machine with the hardware and interact on the command line - and hopefully use any standard terminal programs like Vim, etc.
 
 The final device uses an esp32c3 microcontroller and custom designed circuit boards hand soldered together.
 
@@ -95,12 +95,12 @@ VGA comes in several modes, and we target the 640x480, 60Hz frame rate mode - th
 
 :----:|:-----:
 ![Timing Board front](/assets/images/vgaterm-timing-front.jpg) | ![Timing Board back](/assets/images/vgaterm-timing-back.jpg)
-<span style="color: {{ site.caption_color }};">Vgaterm Timing circuit top</span> | <span style="color: {{ site.caption_color }};">Vgaterm Timing cicuit bottom</span>
+<span style="color: {{ site.caption_color }};">Vgaterm Timing circuit top</span> | <span style="color: {{ site.caption_color }};">Vgaterm Timing circuit bottom</span>
 
 VGA timing is controlled by the "timing board" circuit. This establishes the `H_SYNC` and `V_SYNC` signals that VGA requires, the `START` signal which alerts the CPU to begin  emitting pixels to the FIFO, and the `visible` flag, which is used to compute `CLK_VIS` to read pixel bytes out of the FIFO.
 
 ### Pixels Out
-Every frame (60 times a second) the esp32c3 microcontroller needs to output 256,000 bytes (640x400 pixels, 1 byte per pixel) to hardware so they may be displayed. We decided that this is the most important software role as too much jitter in timing will cause artifacts and wobbling in the piture.
+Every frame (60 times a second) the esp32c3 microcontroller needs to output 256,000 bytes (640x400 pixels, 1 byte per pixel) to hardware so they may be displayed. We decided that this is the most important software role as too much jitter in timing will cause artifacts and wobbling in the picture.
 
 To cross the clock domains, from the CPU SPI to VGA pixel clock, we used a FIFO memory chip. This lets us write bytes from the CPU while VGA hardware reads bytes exactly when it needs them.
 
@@ -114,7 +114,7 @@ This worked well, but there are a few constraints we had to consider when design
 * The size of the FIFO effects how much wiggle room we get in the above two cases, especially as the FIFO is too expensive to have enough room for the whole frame.
 * VGA hardware does not read from the FIFO at the pixel clock rate across the entire duration of the frame. Since the visible portion of the frame is only about 73% of the total time spent per frame (because of the blanking area), the average read rate per frame is actually less than the pixel clock rate
 
-The details in how we eneded up on our specific design will be elaberated on in another post, but suffice to say we had to coordinate design details across software, hardware, specific part choices, and part pricing.
+The details in how we ended up on our specific design will be elaborated on in another post, but suffice to say we had to coordinate design details across software, hardware, specific part choices, and part pricing.
 
 ### Displaying Pixels
 To display pixels, the `CLK_VIS` signal generated by the VGA timing hardware reads bytes from the FIFO and into a [Programmable Logic Device (PLD)](https://en.wikipedia.org/wiki/Programmable_logic_device) which maps the 8 bits into 9 bits, 3 bits for each of the color channels - red, green, and blue. These 9 bits then get sent to the DAC, described in the following section.
@@ -145,7 +145,7 @@ For keyboard input we went over several options including falling back on [PS/2 
 
 Software, in a loop, waits for keyboard input or input by a connected host. When input is received on either, the CPU is interrupted. If receiving key presses, the character(s) are dequeued and passed along to the connected host. If receiving characters from the host, vgaterm updates the text buffer and cursor which updates the video memory. The updated video memory is then emitted in the next frame, showing the text to the user on screen.
 
-Seth and I decided that this should _never_ interrupt the CPU from emitting pixel bytes as we wanted to prevent any visual artifacts as much as possible. However this could mean it's possible to drop characters if the CPU is overwhelmed with input. We landed on this decision because the chance of dropping characters seemed small and the display shaking and wobbling felt viscerally "broken". We can also help mitigate the liklihood of dropping characters with some UART settings ([Software Flow Control](https://en.wikipedia.org/wiki/Software_flow_control)).
+Seth and I decided that this should _never_ interrupt the CPU from emitting pixel bytes as we wanted to prevent any visual artifacts as much as possible. However this could mean it's possible to drop characters if the CPU is overwhelmed with input. We landed on this decision because the chance of dropping characters seemed small and the display shaking and wobbling felt viscerally "broken". We can also help mitigate the likelihood of dropping characters with some UART settings ([Software Flow Control](https://en.wikipedia.org/wiki/Software_flow_control)).
 
 
 # Closing Thoughts
@@ -154,9 +154,9 @@ This is only an overview of the operation and design of Vgaterm. My hope is that
 
 Working on this project challenged me technologically at every step but I always felt like I could make progress. And when I did despair and feel overwhelmed by a problem I couldn't crack Seth would be there to help and together we'd make progress again. And likewise I would be there for Seth when he was stuck. For one of the first times I felt supported and heard in work. Our skills and outlooks complemented each other in a virtuous cycle. I could not have done this on my own, and together we made something and learned together which feels remarkable!
 
-I have more hope, after this experience, that I can find and cultivate more working relationships that are nurturing, where we learn from each other, and that allow us to tackle problems that we couldn't solve individually. Through community we can own and solve problems that colletively affect us.
+I have more hope, after this experience, that I can find and cultivate more working relationships that are nurturing, where we learn from each other, and that allow us to tackle problems that we couldn't solve individually. Through community we can own and solve problems that collectively affect us.
 
-This leads to how I began to change how I thought about open source and open hardware as Vgaterm was developed. Seth and I always wanted this to be open, but now I see us and our project as existing within and for the open source community and also in the greater maker and DIY community. Communities like knitters, gardeners, crafters, artists, DIY, home chefs and others all use a network of engaged and creative folks to pass around ideas to share - to collectively own the ideas of their particlar craft for anyone to learn. I've started to see technology in a similar light.
+This leads to how I began to change how I thought about open source and open hardware as Vgaterm was developed. Seth and I always wanted this to be open, but now I see us and our project as existing within and for the open source community and also in the greater maker and DIY community. Communities like knitters, gardeners, crafters, artists, DIY, home chefs and others all use a network of engaged and creative folks to pass around ideas to share - to collectively own the ideas of their particular craft for anyone to learn. I've started to see technology in a similar light.
 
 I've realized that electronics and hardware and programming are just skills that someone can learn like any other, and that we, the community, can collectively own and build things that are important and useful - that we don't have to capitulate to huge corporations that want to collect our data, exploit workers, or monopolize the objects and services in our daily lives. It feels like a way to fight against the [enshittification](https://en.wikipedia.org/wiki/Enshittification) that represents the current era in tech today. These are concepts I'm still thinking about and working through, and I have Vgaterm to thank for helping me engage with these ideas.
 

@@ -14,7 +14,7 @@ body {}
 $linkColour: #b13658;
 $accentColour: #b13658;
 $hoverColour: #3952b7;
-$captionColour: #b13658;
+$captionColour: {{ site.caption_color }};
 
 $bodytype: (
   font-family: '"Noto Sans", Ariel',

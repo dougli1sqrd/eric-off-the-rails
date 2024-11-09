@@ -27459,7 +27459,7 @@ const QuizGame = ({})=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _quizMap.QuizMap), {
         started: gameState === PLAYING,
         endGame: endGame,
-        autoPlay: true,
+        autoPlay: false,
         initialStudyTime: initStudyTime,
         numberStudies: numberStudies,
         studyTime: studyTime,

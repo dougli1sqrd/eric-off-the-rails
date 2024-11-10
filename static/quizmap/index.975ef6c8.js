@@ -39314,13 +39314,21 @@ var _s = $RefreshSig$();
 const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStudies })=>{
     _s();
     const [visible, setVisible] = (0, _react.useState)(true);
+    const initDropDownRef = (0, _react.useRef)(null);
+    const studyTimeDropDownRef = (0, _react.useRef)(null);
+    const numberStudiesDropDownRef = (0, _react.useRef)(null);
+    (0, _react.useEffect)(()=>{
+        if (initDropDownRef.current) setInitialStudyTime(initDropDownRef.current.value);
+        if (studyTimeDropDownRef.current) setStudyTime(studyTimeDropDownRef.current.value);
+        if (numberStudiesDropDownRef.current) setNumberStudies(numberStudiesDropDownRef.current.value);
+    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Learn the Countries of Africa!"
             }, void 0, false, {
                 fileName: "src/components/StartPanel.jsx",
-                lineNumber: 9,
+                lineNumber: 25,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -39333,13 +39341,14 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                             onChange: (ev)=>{
                                 setInitialStudyTime(ev.target.value);
                             },
+                            ref: initDropDownRef,
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
                                     value: 0,
                                     children: "None"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 14,
+                                    lineNumber: 30,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39347,7 +39356,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "15 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 15,
+                                    lineNumber: 31,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39355,7 +39364,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "30 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 16,
+                                    lineNumber: 32,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39363,24 +39372,24 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "60 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 17,
+                                    lineNumber: 33,
                                     columnNumber: 21
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/StartPanel.jsx",
-                            lineNumber: 13,
+                            lineNumber: 29,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/StartPanel.jsx",
-                    lineNumber: 12,
+                    lineNumber: 28,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/StartPanel.jsx",
-                lineNumber: 11,
+                lineNumber: 27,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -39393,13 +39402,14 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                             onChange: (ev)=>{
                                 setNumberStudies(ev.target.value);
                             },
+                            ref: numberStudiesDropDownRef,
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
                                     value: 0,
                                     children: "None"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 25,
+                                    lineNumber: 41,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39407,7 +39417,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 26,
+                                    lineNumber: 42,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39415,7 +39425,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 27,
+                                    lineNumber: 43,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39423,24 +39433,24 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 44,
                                     columnNumber: 21
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/StartPanel.jsx",
-                            lineNumber: 24,
+                            lineNumber: 40,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/StartPanel.jsx",
-                    lineNumber: 23,
+                    lineNumber: 39,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/StartPanel.jsx",
-                lineNumber: 22,
+                lineNumber: 38,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -39453,13 +39463,14 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                             onChange: (ev)=>{
                                 setStudyTime(ev.target.value);
                             },
+                            ref: studyTimeDropDownRef,
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
                                     value: 5000,
                                     children: "5 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 52,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39467,7 +39478,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "10 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 53,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39475,7 +39486,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "15 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 54,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39483,7 +39494,7 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "30 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 39,
+                                    lineNumber: 55,
                                     columnNumber: 21
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -39491,24 +39502,24 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                                     children: "60 seconds"
                                 }, void 0, false, {
                                     fileName: "src/components/StartPanel.jsx",
-                                    lineNumber: 40,
+                                    lineNumber: 56,
                                     columnNumber: 21
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/StartPanel.jsx",
-                            lineNumber: 35,
+                            lineNumber: 51,
                             columnNumber: 17
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/StartPanel.jsx",
-                    lineNumber: 34,
+                    lineNumber: 50,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/StartPanel.jsx",
-                lineNumber: 33,
+                lineNumber: 49,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -39520,17 +39531,17 @@ const StartPanel = ({ startGame, setInitialStudyTime, setStudyTime, setNumberStu
                 }
             }, void 0, false, {
                 fileName: "src/components/StartPanel.jsx",
-                lineNumber: 46,
+                lineNumber: 62,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/StartPanel.jsx",
-        lineNumber: 8,
+        lineNumber: 24,
         columnNumber: 12
     }, undefined);
 };
-_s(StartPanel, "p/lRV+JGew4KJq1vCTMMXt6g6IM=");
+_s(StartPanel, "S84N/69Qwlg6WLDmkPaueggJFy8=");
 _c = StartPanel;
 var _c;
 $RefreshReg$(_c, "StartPanel");

@@ -1,0 +1,56 @@
+#foo, .leaflet-container {
+  height: 700px;
+}
+
+.width-800 {
+  width: 800px;
+}
+
+.height-700 {
+  height: 700px;
+}
+
+.float-left {
+  float: left;
+}
+
+.country-label {
+  font-weight: 900;
+  box-shadow: none !important;
+  color: #000 !important;
+  background-color: #0000 !important;
+  border: none !important;
+}
+
+.studying {
+  animation: 4s linear infinite opacitymove;
+}
+
+.map-background {
+  background-color: #324b4b;
+}
+
+.map-fill-unknown {
+  fill-opacity: 1;
+  fill: #0b7879;
+  border-color: #606998;
+}
+
+.map-fill-selected {
+  fill-opacity: 1;
+  fill: #ff8749;
+  border-color: #8a1d00;
+}
+
+.map-fill-correct {
+  fill-opacity: 1;
+  fill: #009a70;
+  border-color: #7dcc7e;
+}
+
+@keyframes opacitymove {
+  70% {
+    opacity: .4;
+  }
+}
+/*# sourceMappingURL=index.5de1eb28.css.map */

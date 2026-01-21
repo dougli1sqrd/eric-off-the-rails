@@ -6,13 +6,8 @@ aside: true
 aside_text: |
     ### About this site
     Stories and thoughts of Community and Motion in our Urban Landscape. Here I will share my
-    thoughts on cities, transportation, politics, and history.
-
-    ### Upcoming Post Ideas
-    - Finding Feudalism in Ancient Rome
-    - Fare Evasion rhetoric and how it serves to dehumanize homeless people
-    - Why we don't notice fascism in our culture
-    - How She-Ra and Dragon Prince show different sides of the fight against Fascism
+    thoughts on cities, transportation, politics, and history. I'll also use this as a place
+    to share adventures in electronics and programming projects.
 ---
 
 Thinking in Cities, to me, is all about seeing our communities through the eyes of history, geography, politics, justice, infrastructure and, crucially, to imagine and advocate for a better world for all of us in the City.

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg version="1.1" viewBox="0 0 118.62 75.045" xmlns="http://www.w3.org/2000/svg">
+ <style><![CDATA[
+.rose {
+  fill:none;
+  stroke:#ff4500;
+  stroke-dasharray:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:4;
+  stroke-width:0.4;
+}
+.leaf {
+  fill:none;
+  stroke:#ff4500;
+  stroke-dasharray:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:4;
+  stroke-opacity:1;
+  stroke-width:0.4;
+}
+.via {
+  fill:#ff4500
+  fill-opacity:1;
+  fill-rule:evenodd;
+  stroke-dasharray:none;
+  stroke-miterlimit:4;
+  stroke-width:0.4;
+}
+]]></style>
+ <g transform="translate(-46.583 -82.707)" stroke="#ff4500">
+  <g class="rose" transform="matrix(6.1902 0 0 6.2377 -778.46 -476.29)" stroke-width=".40232">
+   <path d="m138.13 94.666c0.3225 2.3236 3.4314 0.76244 3.2591-0.45202"/>
+   <path d="m139.8 94.666a0.8344 0.8344 0 0 1-0.8344 0.8344 0.8344 0.8344 0 0 1-0.8344-0.8344 0.8344 0.8344 0 0 1 0.8344-0.8344 0.8344 0.8344 0 0 1 0.8344 0.8344z"/>
+   <path d="m140 98a5.0249 5.0249 0 0 0 4.0445-7.1442"/>
+   <path d="m136.13 94.666c-0.13792 1.4213 1.6961 3.5682 3.8717 3.3344"/>
+   <path d="m144.03 90.817a2.9155 2.9155 0 0 0-2.9554 0.0262"/>
+   <path d="m136.5 91a2.9155 2.9155 0 0 0-3 0"/>
+   <path d="m141.07 90.843c-1.1922-1.4902-3.4833-1.4117-4.5707 0.1566"/>
+   <path d="m133.5 91a9.0554 9.0554 0 0 0 9 10.055"/>
+   <path d="m141.39 94.214c0.0478-0.79489-0.88418-1.8638-2.3697-1.8313-1.4229 0.03118-2.897 0.77606-2.8894 2.2833"/>
+  </g>
+  <g class="leaf" stroke-linecap="round" stroke-linejoin="round">
+   <g stroke-width="2.5">
+    <path d="m115.68 127.95 9.6282-9.7022"/>
+    <path d="m115.68 144.71v-16.765"/>
+    <path d="m115.68 141.54 28.199-28.415"/>
+   </g>
+   <path d="m115.68 153.73v-9.011" stroke-width="2.6"/>
+   <g stroke-width="2.5">
+    <path d="m142.53 153.73 15.475-15.594"/>
+    <path d="m125.31 153.73h17.223"/>
+    <path d="m129.52 153.2 29.616-29.844"/>
+    <path d="m116.02 153.73h9.2853"/>
+    <path d="m116.02 153.73 43.331-43.664"/>
+   </g>
+   <path d="m115.68 153.73h0.34294" stroke-width="2"/>
+   <path d="m115.68 154.07v-0.34558" stroke-width="2"/>
+   <path d="m103.64 154.07h12.037" stroke-width="2.5"/>
+  </g>
+  <g fill="#ff4500ff">
+   <circle class="via" cx="126.82" cy="116.65" r="2.5"/>
+   <circle class="via" cx="145.33" cy="111.49" r="2.5"/>
+   <circle class="via" cx="159.67" cy="109.75" r="2.5"/>
+   <circle class="via" cx="161.38" cy="121.18" r="2.5"/>
+   <circle class="via" cx="160.01" cy="136.32" r="2.5"/>
+   <circle class="via" cx="115.72" cy="153.84" r="2.5"/>
+  </g>
+ </g>
+</svg>
